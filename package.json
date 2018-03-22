@@ -1,5 +1,5 @@
 {
-  "name": "mook",
+  "name": "Electron-App",
   "version": "0.1.0",
   "main": "public/electron.js",
   "homepage": "./",
@@ -12,8 +12,8 @@
     "postinstall": "electron-builder install-app-deps",
     "electron-start": "electron .",
     "rebuild": "electron-rebuild  -f -w sqlite3",
-    "electron-dev": "concurrently  \"gulp watch\" \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-pack": "build --em.main=build/electron.js",
+    "dev": "concurrently  \"gulp watch\" \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "pack": "build --em.main=build/electron.js",
     "preelectron-pack": "yarn build"
   },
   "dependencies": {
