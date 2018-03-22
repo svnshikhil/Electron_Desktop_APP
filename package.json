@@ -1,0 +1,59 @@
+{
+  "name": "mook",
+  "version": "0.1.0",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "postinstall": "electron-builder install-app-deps",
+    "electron-start": "electron .",
+    "rebuild": "electron-rebuild  -f -w sqlite3",
+    "electron-dev": "concurrently  \"gulp watch\" \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=build/electron.js",
+    "preelectron-pack": "yarn build"
+  },
+  "dependencies": {
+    "antd": "^3.3.1",
+    "axios": "^0.18.0",
+    "cross-env": "5.0.1",
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.6",
+    "electron-updater": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "lodash": "^4.17.5",
+    "node-notifier": "^5.1.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.7",
+    "react-router": "3.0.3",
+    "react-scripts": "1.0.13",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "electron": "^1.7.6",
+    "electron-rebuild": "^1.7.3",
+    "electron-builder": "^19.27.7",
+    "wait-on": "^2.0.2",
+    "prettier": "^1.4.4"
+  },
+  "build": {
+    "appId": "com.mook",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
