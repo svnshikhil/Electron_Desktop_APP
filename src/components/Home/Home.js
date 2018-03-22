@@ -11,6 +11,7 @@ class Home extends Component {
         <p className="App-intro">
           Version: 0.1.0
         </p>
+        <button onClick={()=>this.props.router.push("/login")}>Back</button>
       </div>
     );
   }

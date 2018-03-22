@@ -6,11 +6,12 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import _ from 'lodash'
 import Home from '../../components/Home'
-class MainFrame extends Component {
+class HomePage extends Component {
   render() {
     console.log(this.props)
     return (
-      <Home />
+      <Home
+        {...this.props} />
     );
   }
 }
@@ -23,4 +24,4 @@ const mapStateToProps = createStructuredSelector({
   systemState: makeSelectGlobal(),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainFrame)
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

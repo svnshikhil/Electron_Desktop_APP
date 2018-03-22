@@ -5,14 +5,16 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Full from './containers/Full/'
 
 // Routes
-import MainFrame from './views/MainFrame/'
+import HomePage from './views/HomePage/'
+import LoginPage from './views/LoginPage'
 
 
 export default (
   <Router history={hashHistory}>
     <Route path="/" name="Home" component={Full}>
-      <IndexRoute component={MainFrame} />
-      <Route path="home" name="MainFrame" component={MainFrame} />
+      <IndexRoute component={HomePage} />
+      <Route path="home" name="Home" component={HomePage} />
+      <Route path="login" name="Login" component={LoginPage} />
     </Route>
   </Router>
 );
